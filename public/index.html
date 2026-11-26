@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Loja Escolar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/css/uikit.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/js/uikit.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/js/uikit-icons.min.js" defer></script>
+    <script src="/app.js" defer></script>
+</head>
+
+<body>
+    <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+        <div class="uk-navbar-left"><a class="uk-navbar-item uk-logo" href="#">Loja Escolar</a></div>
+        <div class="uk-navbar-right">
+            <div id="user-area" class="uk-navbar-item"></div>
+        </div>
+    </nav>
+    <main class="uk-container uk-margin-large-top">
+        <section id="auth" class="uk-card uk-card-default uk-card-body auth-card">
+            <h1 class="uk-card-title">Bem-vindo</h1>
+            <p class="uk-text-muted">Entre na loja ou crie sua conta para continuar.</p>
+            <div class="uk-button-group uk-margin-small-bottom"><button class="uk-button uk-button-primary"
+                    id="show-login">Entrar</button><button class="uk-button uk-button-default" id="show-register">Criar
+                    conta</button></div>
+            <form id="auth-form" class="uk-form-stacked">
+                <div id="name-field" hidden class="uk-margin"><label class="uk-form-label">Nome</label><input
+                        class="uk-input" name="name"></div>
+                <div class="uk-margin"><label class="uk-form-label">E-mail</label><input class="uk-input" name="email"
+                        type="email" required></div>
+                <div class="uk-margin"><label class="uk-form-label">Senha</label><input class="uk-input" name="password"
+                        type="password" minlength="6" required></div><button
+                    class="uk-button uk-button-primary uk-width-1-1">Continuar</button>
+            </form>
+            <p id="auth-message" class="uk-text-danger"></p>
+        </section>
+        <section id="dashboard" hidden>
+            <div class="uk-flex uk-flex-between uk-flex-middle uk-margin">
+                <div>
+                    <h1 class="uk-heading-small uk-margin-remove">Painel da loja</h1>
+                    <p id="welcome" class="uk-text-muted uk-margin-small-top"></p>
+                </div><button id="add-record" class="uk-button uk-button-primary">+ Novo registro</button>
+            </div>
+            <ul id="tabs" class="uk-tab" uk-tab></ul>
+            <ul id="pages" class="uk-switcher uk-margin"></ul>
+        </section>
+    </main>
+    <div id="edit-modal" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body"><button class="uk-modal-close-default" type="button"
+                uk-close></button>
+            <h2 id="modal-title" class="uk-modal-title">Registro</h2>
+            <form id="record-form" class="uk-form-stacked">
+                <div id="record-fields"></div>
+                <div class="uk-margin-top"><button class="uk-button uk-button-primary">Salvar</button><button
+                        type="button" class="uk-button uk-button-default uk-modal-close">Cancelar</button></div>
+            </form>
+        </div>
+    </div>
+    <div id="toast" uk-alert hidden></div>
+</body>
+
+</html>

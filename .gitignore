@@ -1,0 +1,4 @@
+node_modules/
+.env
+react-extra/node_modules/
+react-extra/dist/
